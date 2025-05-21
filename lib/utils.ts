@@ -66,10 +66,11 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-US", {
+  const formatter = new Intl.NumberFormat("id-ID", {
     style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   });
 
   return formatter.format(amount);

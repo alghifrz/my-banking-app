@@ -19,14 +19,65 @@ const config = {
       },
     },
     extend: {
+      // colors: {
+      //   fill: {
+      //     1: "rgba(255, 255, 255, 0.10)",
+      //   },
+      //   bankGradient: "#0179FE",
+      //   indigo: {
+      //     500: "#6172F3",
+      //     700: "#3538CD",
+      //   },
+      //   success: {
+      //     25: "#F6FEF9",
+      //     50: "#ECFDF3",
+      //     100: "#D1FADF",
+      //     600: "#039855",
+      //     700: "#027A48",
+      //     900: "#054F31",
+      //   },
+      //   pink: {
+      //     25: "#FEF6FB",
+      //     100: "#FCE7F6",
+      //     500: "#EE46BC",
+      //     600: "#DD2590",
+      //     700: "#C11574",
+      //     900: "#851651",
+      //   },
+      //   blue: {
+      //     25: "#F5FAFF",
+      //     100: "#D1E9FF",
+      //     500: "#2E90FA",
+      //     600: "#1570EF",
+      //     700: "#175CD3",
+      //     900: "#194185",
+      //   },
+      //   sky: {
+      //     1: "#F3F9FF",
+      //   },
+      //   black: {
+      //     1: "#00214F",
+      //     2: "#344054",
+      //   },
+      //   gray: {
+      //     25: "#FCFCFD",
+      //     200: "#EAECF0",
+      //     300: "#D0D5DD",
+      //     500: "#667085",
+      //     600: "#475467",
+      //     700: "#344054",
+      //     900: "#101828",
+      //   },
+      // },
+
       colors: {
         fill: {
           1: "rgba(255, 255, 255, 0.10)",
         },
-        bankGradient: "#0179FE",
+        bankGradient: "#00B176", // hijau dominan, bisa untuk logo/gradient utama
         indigo: {
-          500: "#6172F3",
-          700: "#3538CD",
+          500: "#66D19E",
+          700: "#059669",
         },
         success: {
           25: "#F6FEF9",
@@ -44,20 +95,20 @@ const config = {
           700: "#C11574",
           900: "#851651",
         },
-        blue: {
-          25: "#F5FAFF",
-          100: "#D1E9FF",
-          500: "#2E90FA",
-          600: "#1570EF",
-          700: "#175CD3",
-          900: "#194185",
+        green: { // baru, ganti dari blue
+          25: "#F3FCF7",
+          100: "#CFFAE5",
+          500: "#12B76A",
+          600: "#039855",
+          700: "#027A48",
+          900: "#054F31",
         },
         sky: {
-          1: "#F3F9FF",
+          1: "#F3FCF7", // ganti dari biru ke hijau pucat
         },
         black: {
-          1: "#00214F",
-          2: "#344054",
+          1: "#002B20",
+          2: "#1F3A32",
         },
         gray: {
           25: "#FCFCFD",
@@ -69,6 +120,7 @@ const config = {
           900: "#101828",
         },
       },
+ 
       backgroundImage: {
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
         "gradient-mesh": "url('/icons/gradient-mesh.svg')",
@@ -84,8 +136,8 @@ const config = {
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {
-        sans: ["var(--font-montserrat)"],
-        montserrat: ["var(--font-montserrat)"],
+        sans: ["var(--font-lato)"],
+        lato: ["var(--font-lato)"],
       },
       keyframes: {
         "accordion-down": {

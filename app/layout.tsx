@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const nunito_sans = Nunito_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-montserrat",
+  weight: ["800", "900", "1000"],
+  variable: "--font-nunito_sans",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="en" className={nunito_sans.className}>
+      <head>
+        
+      </head>
       <body className="antialiased">
         {children}
       </body>
