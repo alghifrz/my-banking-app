@@ -13,7 +13,7 @@ const Sidebar = ({ user }: SidebarProps) => {
             <section className="sidebar">
                 <nav className="flex flex-col gap-4">
                     <Link href="/" className="flex mb-12 cursor-pointer items-center gap-2">
-                        <Image src="/icons/logo.png" alt="mPitih Logo" width={64} height={64} className="size-[84px] max-xl:size-24"/>
+                        <Image src="/icons/logo.png" alt="mPitih Logo" width={64} height={64} className=""/>
                         <h1 className="sidebar-logo">mPitih</h1>
                     </Link>
 
@@ -30,8 +30,9 @@ const Sidebar = ({ user }: SidebarProps) => {
                             </Link>
                         )
                     })}
-    
+                    USER
                 </nav>
+                FOOTER
             </section>
         </>
     )

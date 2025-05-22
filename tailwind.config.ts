@@ -137,8 +137,9 @@ const config = {
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
       fontFamily: {
-        sans: ["var(--font-lato)"],
-        lato: ["var(--font-lato)"],
+        sans: ["var(--font-rajdhani)"],
+        rajdhani: ["var(--font-rajdhani)"],
+        goldman: ["var(--font-goldman)"],
       },
       keyframes: {
         "accordion-down": {
