@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Nunito_Sans, Rajdhani } from "next/font/google";
 import "./globals.css";
 
 const nunito_sans = Nunito_Sans({
@@ -7,6 +7,13 @@ const nunito_sans = Nunito_Sans({
   display: "swap",
   weight: ["800", "900", "1000"],
   variable: "--font-nunito_sans",
+});
+
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  display: "swap",    
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-rajdhani",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito_sans.className}>
+    <html lang="en" className={`${nunito_sans.className} ${rajdhani.className}`}>
       <head>
         
       </head>

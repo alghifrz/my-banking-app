@@ -75,6 +75,7 @@ const config = {
           1: "rgba(255, 255, 255, 0.10)",
         },
         bankGradient: "#00B176", // hijau dominan, bisa untuk logo/gradient utama
+        logo: '#02733b',
         indigo: {
           500: "#66D19E",
           700: "#059669",

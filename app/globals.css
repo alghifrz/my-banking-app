@@ -369,7 +369,7 @@
   }
 
   .sidebar-logo {
-    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    @apply 2xl:text-30 text-[26px] font-[var(--font-rajdhani)] font-black text-logo max-xl:hidden;
   }
 
   .sidebar-link {
