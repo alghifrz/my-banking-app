@@ -11,8 +11,8 @@ import { Form } from "@/components/ui/form"
 import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
-import { email } from "zod/v4";
 import { useRouter } from "next/navigation";
+import { signUp, signIn, getLoggedInUser } from "@/lib/actions/user.actions";
 
 const AuthForm = ({ type }: { type: string }) => {
     const router = useRouter()
@@ -36,16 +36,17 @@ const AuthForm = ({ type }: { type: string }) => {
         try {
             if (type === "register") {
                 console.log(values)
-                // const newUser = await signUp(values);
-                // setUser(newUser)
-            } else if (type === "login") {
-                // const response = await signIn({
-                //     email: values.email,
-                //     password: values.password
-                // })
-                // if (response) {
-                //     router.push("/")
-                // }
+                const newUser = await signUp(values);
+                setUser(newUser)
+            } 
+             else if (type === "login") {
+                const response = await signIn({
+                    email: values.email,
+                    password: values.password
+                })
+                if (response) {
+                    router.push("/")
+                }
             }
         } catch (error) {
             console.log(error)
@@ -59,7 +60,7 @@ const AuthForm = ({ type }: { type: string }) => {
         <>
             <section className="auth-form">
                 <header className="flex flex-col gap-5 md:gap-8">
-                    <Link href="/" className="flex cursor-pointer items-center gap-1 ">
+                    <Link href="/" className="flex cursor-pointer items-center gap-1 justify-center">
                         <Image 
                             src="/icons/logo.png" 
                             alt="mPitih Logo" 
@@ -71,8 +72,8 @@ const AuthForm = ({ type }: { type: string }) => {
                         <h1 className="font-goldman font-black text-logo text-5xl">mPitih</h1>
                     </Link>
 
-                    <div className="flex flex-col gap-1 md:gap-3">
-                        <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
+                    <div className="flex flex-col gap-1 md:gap-3 justify-center items-center">
+                        <h1 className="text-24 lg:text-36 font-semibold text-gray-900 text-center">
                             {user 
                                 ? 'Link Account'
                                 : type === 'login'
@@ -97,7 +98,7 @@ const AuthForm = ({ type }: { type: string }) => {
                 ) : (
                     <>
                         <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                                 {type === 'register' && (
                                     <>
                                         <div className="flex gap-4 w-full">
