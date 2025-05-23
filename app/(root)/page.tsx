@@ -14,14 +14,14 @@ const Home = async () => {
           <header className="home-header">
             <HeaderBox 
               type="greeting"
-              title="Welcome"
+              title="Welcome,"
               user={loggedIn?.name || "Guest"}
               subtext="From pitih to power with full control in your hands."
             />
             <TotalBalanceBox 
               accounts={[]}
               totalBanks={1}
-              totalCurrentBalance={1000000.00}
+              totalCurrentBalance={434000000.00}
             />
           </header>
         
@@ -30,7 +30,7 @@ const Home = async () => {
         <RightSidebar 
           user={loggedIn}
           transactions={[]}
-          banks={[{currentBalance: 1000000.00}, {currentBalance: 2000000.00}]}
+          banks={[{currentBalance: 434000000.00}, {currentBalance: 2000000.00}]}
         />
       </section>
     </>
