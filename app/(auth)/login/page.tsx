@@ -1,8 +1,14 @@
+import AuthForm from "@/components/AuthForm";
+
 const Login = () => {
     return (
-        <div>
-            <h1>Login</h1>
-        </div>
+        <>
+            <section className="flex-center size-fulll max-sm:px-6">
+                <AuthForm
+                    type="login"
+                />
+            </section>
+        </>
     );
 }
 

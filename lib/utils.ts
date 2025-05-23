@@ -2,6 +2,7 @@
 import { type ClassValue, clsx } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
+import z from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -194,3 +195,36 @@ export const getTransactionStatus = (date: Date) => {
 
   return date > twoDaysAgo ? "Processing" : "Success";
 };
+
+export const authFormSchema = (type: string) => z.object({
+  email: z.string().email({
+    message: "Invalid email address",
+  }),
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters",
+  }),
+  firstName: type === 'login' ? z.string().optional() : z.string().min(2, {
+    message: "First name must be at least 2 characters",
+  }),
+  lastName: type === 'login' ? z.string().optional() : z.string().min(2, {
+    message: "Last name must be at least 2 characters",
+  }),
+  address: type === 'login' ? z.string().optional() : z.string().min(5, {
+    message: "Address must be at least 5 characters",
+  }),
+  province: type === 'login' ? z.string().optional() : z.string().min(2, {
+    message: "Province must be at least 2 characters",
+  }),
+  city: type === 'login' ? z.string().optional() : z.string().min(2, {
+    message: "City must be at least 2 characters",
+  }),
+  postalCode: type === 'login' ? z.string().optional() : z.string().min(5, {
+    message: "Postal code must be at least 5 characters",
+  }),
+  dateOfBirth: type === 'login' ? z.string().optional() : z.string().regex(/^\d{4}-\d{2}-\d{2}$/, {
+    message: "Invalid date format. Use YYYY-MM-DD",
+  }),
+  nik: type === 'login' ? z.string().optional() : z.string().length(16, {
+    message: "NIK must be exactly 16 digits",
+  }),
+})
